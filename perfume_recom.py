@@ -46,7 +46,7 @@ def get_recommendations(occasion, age_group, description, cosine_sim, df,tfidf_v
     sim_scores = sim_scores[:top_n]
     perfume_indices = [i[0] for i in sim_scores]
 
-    results =  df['Name'].iloc[perfume_indices].reset_index(drop=True)
+    results =  df[['Name','Image URL']].iloc[perfume_indices].reset_index(drop=True)
 
     return results.to_json()
 
