@@ -8,15 +8,15 @@ import random
 df = pd.read_csv("data/final_perfume_data.csv", encoding='latin1')
 
 #dummy occasion data
-Occasion_list = ['Casual', 'Evening', 'Daytime']
-df['Occasion'] = [random.choice(Occasion_list) for _ in range(len(df))]
-
-#dummy age data
-Age_range_list = ['Any', '25-50', '18-35']
-df['Age_Group'] = [random.choice(Age_range_list) for _ in range(len(df))]
+# Occasion_list = ['Casual', 'Evening', 'Daytime']
+# df['Occasion'] = [random.choice(Occasion_list) for _ in range(len(df))]
+#
+# #dummy age data
+# Age_range_list = ['Any', '25-50', '18-35']
+# df['Age_Group'] = [random.choice(Age_range_list) for _ in range(len(df))]
 
 # Combine description, occasion, and age group into a single text for TF-IDF Vectorizer
-df['Combined'] = df['Description'] + ' ' + df['Occasion'] + ' ' + df['Age_Group']
+df['Combined'] = df['Description']
 
 # Function to get user input
 def get_user_input():
